@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useParams } from "next/navigation";
 import { getToolById } from "@/data/tools";
 import { GitHubIcon, ExternalLinkIcon } from "@/components/icons";
+import { CVEList } from "@/components/cve-list";
 
 export default function ToolDetailPage() {
   const params = useParams();
@@ -121,6 +122,11 @@ export default function ToolDetailPage() {
               </p>
             </div>
           )}
+        </section>
+
+        {/* CVE Section */}
+        <section className="mt-12">
+          <CVEList keyword={tool.name} />
         </section>
 
         {/* Self-host Section */}
