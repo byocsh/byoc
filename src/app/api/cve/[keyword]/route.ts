@@ -8,6 +8,8 @@ interface CVEItem {
   publishedDate: string;
   lastModifiedDate: string;
   references: string[];
+  fixedVersions: string[];
+  affectedPackages: string[];
 }
 
 interface NVDResponse {
@@ -37,9 +39,74 @@ interface NVDResponse {
   totalResults: number;
 }
 
+interface OSVResponse {
+  vulns?: Array<{
+    id: string;
+    affected?: Array<{
+      package?: {
+        name: string;
+        ecosystem: string;
+      };
+      ranges?: Array<{
+        type: string;
+        events: Array<{ introduced?: string; fixed?: string }>;
+      }>;
+    }>;
+  }>;
+}
+
 // Simple in-memory cache with TTL
 const cache = new Map<string, { data: CVEItem[]; timestamp: number; total: number }>();
 const CACHE_TTL = 1000 * 60 * 60; // 1 hour
+
+// Fetch fix information from OSV.dev for a specific CVE
+async function fetchOSVData(cveId: string): Promise<{ fixedVersions: string[]; affectedPackages: string[] }> {
+  try {
+    const response = await fetch(`https://api.osv.dev/v1/vulns/${cveId}`, {
+      headers: { "User-Agent": "byoc.sh/1.0" },
+    });
+    
+    if (!response.ok) {
+      return { fixedVersions: [], affectedPackages: [] };
+    }
+    
+    const data = await response.json();
+    const fixedVersions: string[] = [];
+    const affectedPackages: string[] = [];
+    
+    if (data.affected) {
+      for (const affected of data.affected) {
+        if (affected.package?.name) {
+          const pkgName = `${affected.package.ecosystem}/${affected.package.name}`;
+          if (!affectedPackages.includes(pkgName)) {
+            affectedPackages.push(pkgName);
+          }
+        }
+        
+        if (affected.ranges) {
+          for (const range of affected.ranges) {
+            // Only use SEMVER or ECOSYSTEM ranges (not GIT which has commit hashes)
+            if (range.type === "GIT") continue;
+            
+            for (const event of range.events || []) {
+              if (event.fixed) {
+                const fixedStr = String(event.fixed);
+                // Only include if it looks like a version (contains a dot or is semver-like)
+                if (fixedStr.includes(".") && !fixedVersions.includes(fixedStr)) {
+                  fixedVersions.push(fixedStr);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    
+    return { fixedVersions: fixedVersions.slice(0, 5), affectedPackages: affectedPackages.slice(0, 5) };
+  } catch {
+    return { fixedVersions: [], affectedPackages: [] };
+  }
+}
 
 export async function GET(
   request: Request,
@@ -86,32 +153,45 @@ export async function GET(
 
     const data: NVDResponse = await response.json();
 
-    const cves: CVEItem[] = data.vulnerabilities.map((vuln) => {
-      const cve = vuln.cve;
-      const description = cve.descriptions.find((d) => d.lang === "en")?.value || "";
-      
-      // Get CVSS score and severity
-      let score: number | null = null;
-      let severity = "UNKNOWN";
-      
-      if (cve.metrics?.cvssMetricV31?.[0]) {
-        score = cve.metrics.cvssMetricV31[0].cvssData.baseScore;
-        severity = cve.metrics.cvssMetricV31[0].cvssData.baseSeverity;
-      } else if (cve.metrics?.cvssMetricV2?.[0]) {
-        score = cve.metrics.cvssMetricV2[0].cvssData.baseScore;
-        severity = cve.metrics.cvssMetricV2[0].baseSeverity || "UNKNOWN";
-      }
+    // Sort by published date (latest first)
+    const sortedVulns = data.vulnerabilities.sort(
+      (a, b) => new Date(b.cve.published).getTime() - new Date(a.cve.published).getTime()
+    );
 
-      return {
-        id: cve.id,
-        description: description.length > 300 ? description.substring(0, 300) + "..." : description,
-        severity,
-        score,
-        publishedDate: cve.published,
-        lastModifiedDate: cve.lastModified,
-        references: cve.references?.slice(0, 3).map((r) => r.url) || [],
-      };
-    });
+    // Fetch OSV data for each CVE to get fix information
+    const cves: CVEItem[] = await Promise.all(
+      sortedVulns.map(async (vuln) => {
+        const cve = vuln.cve;
+        const description = cve.descriptions.find((d) => d.lang === "en")?.value || "";
+        
+        // Get CVSS score and severity
+        let score: number | null = null;
+        let severity = "UNKNOWN";
+        
+        if (cve.metrics?.cvssMetricV31?.[0]) {
+          score = cve.metrics.cvssMetricV31[0].cvssData.baseScore;
+          severity = cve.metrics.cvssMetricV31[0].cvssData.baseSeverity;
+        } else if (cve.metrics?.cvssMetricV2?.[0]) {
+          score = cve.metrics.cvssMetricV2[0].cvssData.baseScore;
+          severity = cve.metrics.cvssMetricV2[0].baseSeverity || "UNKNOWN";
+        }
+
+        // Fetch fix information from OSV.dev
+        const { fixedVersions, affectedPackages } = await fetchOSVData(cve.id);
+
+        return {
+          id: cve.id,
+          description: description.length > 300 ? description.substring(0, 300) + "..." : description,
+          severity,
+          score,
+          publishedDate: cve.published,
+          lastModifiedDate: cve.lastModified,
+          references: cve.references?.slice(0, 3).map((r) => r.url) || [],
+          fixedVersions,
+          affectedPackages,
+        };
+      })
+    );
 
     // Update cache
     cache.set(decodedKeyword, {
