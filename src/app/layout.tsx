@@ -76,7 +76,7 @@ export default function RootLayout({
           </main>
           <footer className="border-t border-gray-200 dark:border-gray-800 mt-20">
             <div className="max-w-4xl mx-auto px-6 py-8 text-center text-sm text-gray-500">
-              © 2025 <Link href="/" className="hover:text-gray-900 dark:hover:text-white">byoc.sh</Link> – open source, your cloud, your rules.
+              built with ♥ by <Link href="https://parseable.com" target="_blank" className="hover:text-gray-900 dark:hover:text-white">Parseable</Link>
             </div>
           </footer>
         </ThemeProvider>
