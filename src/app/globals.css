@@ -15,12 +15,11 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
 }
 
 a {
   color: inherit;
-  text-decoration: underline;
 }
 
 a:hover {

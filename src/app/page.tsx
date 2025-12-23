@@ -6,24 +6,24 @@ export default function Home() {
           bring your own cloud.
         </h1>
 
-        <div className="prose prose-lg dark:prose-invert max-w-none space-y-6 text-gray-700 dark:text-gray-300">
+        <div className="space-y-6 text-gray-600 dark:text-gray-400 leading-relaxed">
           <p>dear friend,</p>
 
           <p>
-            <strong>open source</strong> has transformed how we build software. 
+            <strong className="text-gray-900 dark:text-white">open source</strong> has transformed how we build software. 
             but there&apos;s a catch – most tools today force you into their cloud, 
             their pricing, their rules.
           </p>
 
           <p>
-            we believe in a different approach: <strong>bring your own cloud (byoc)</strong>. 
+            we believe in a different approach: <strong className="text-gray-900 dark:text-white">bring your own cloud (byoc)</strong>. 
             run powerful tools on your infrastructure. keep your data where it belongs. 
             pay only for what you use.
           </p>
 
           <p>
-            <a href="https://byoc.sh">byoc.sh</a> is a curated directory of open source 
-            tools that you can self-host. think of it as <strong>awesome-byoc</strong> – 
+            <a href="/" className="underline hover:no-underline">byoc.sh</a> is a curated directory of open source 
+            tools that you can self-host. think of it as <strong className="text-gray-900 dark:text-white">awesome-byoc</strong> – 
             a community-maintained list of the best software designed to run on your own infrastructure.
           </p>
 
@@ -31,8 +31,8 @@ export default function Home() {
             we don&apos;t build these tools. we don&apos;t host them. we just help you discover them.
           </p>
 
-          <div className="my-10 p-6 bg-gray-50 dark:bg-gray-900 rounded-lg font-mono text-sm">
-            <p className="text-gray-500 dark:text-gray-400 mb-2"># your cloud, your rules</p>
+          <div className="my-10 p-6 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-800 font-mono text-sm">
+            <p className="text-gray-500 mb-2"># your cloud, your rules</p>
             <p>docker run -d your-favorite-tool</p>
           </div>
 
@@ -42,7 +42,7 @@ export default function Home() {
           </p>
 
           <p>
-            check out our <a href="/tools">tools directory</a> to find your next self-hosted solution.
+            check out our <a href="/tools" className="underline hover:no-underline">tools directory</a> to find your next self-hosted solution.
           </p>
 
           <p>
@@ -51,7 +51,7 @@ export default function Home() {
 
           <p className="mt-12">
             best,<br />
-            <strong>the byoc community</strong>
+            <strong className="text-gray-900 dark:text-white">the byoc community</strong>
           </p>
         </div>
       </div>

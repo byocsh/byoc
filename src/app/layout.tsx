@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
+import { GitHubIcon } from "@/components/icons";
+import { ThemeProvider } from "@/components/theme-provider";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -15,7 +18,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "BYOC - Bring Your Own Cloud",
-  description: "Open source tools for the modern developer",
+  description: "A curated directory of open source tools you can self-host",
 };
 
 export default function RootLayout({
@@ -24,33 +27,43 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white dark:bg-black text-gray-900 dark:text-gray-100`}
       >
-        <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-black/80 backdrop-blur-sm border-b border-gray-200 dark:border-gray-800">
-          <div className="max-w-3xl mx-auto px-6 py-4 flex justify-between items-center">
-            <Link href="/" className="font-bold text-xl no-underline hover:opacity-100">
-              byoc.sh
-            </Link>
-            <div className="flex gap-6">
-              <Link href="/" className="text-sm hover:opacity-70 transition-opacity">
-                home
+        <ThemeProvider>
+          <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-black/80 backdrop-blur-sm border-b border-gray-200 dark:border-gray-800">
+            <div className="max-w-4xl mx-auto px-6 py-4 flex justify-between items-center">
+              <Link href="/" className="font-semibold text-lg tracking-tight">
+                byoc.sh
               </Link>
-              <Link href="/tools" className="text-sm hover:opacity-70 transition-opacity">
-                tools
-              </Link>
+              <div className="flex items-center gap-6">
+                <Link href="/" className="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
+                  home
+                </Link>
+                <Link href="/tools" className="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
+                  tools
+                </Link>
+                <Link
+                  href="https://github.com/byocsh/byoc"
+                  target="_blank"
+                  className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
+                >
+                  <GitHubIcon className="w-5 h-5" />
+                </Link>
+                <ThemeToggle />
+              </div>
             </div>
-          </div>
-        </nav>
-        <main className="pt-20">
-          {children}
-        </main>
-        <footer className="border-t border-gray-200 dark:border-gray-800 mt-20">
-          <div className="max-w-3xl mx-auto px-6 py-8 text-center text-sm text-gray-500">
-            © 2025 <Link href="/">byoc.sh</Link> – open source, your cloud, your rules.
-          </div>
-        </footer>
+          </nav>
+          <main className="pt-16">
+            {children}
+          </main>
+          <footer className="border-t border-gray-200 dark:border-gray-800 mt-20">
+            <div className="max-w-4xl mx-auto px-6 py-8 text-center text-sm text-gray-500">
+              © 2025 <Link href="/" className="hover:text-gray-900 dark:hover:text-white">byoc.sh</Link> – open source, your cloud, your rules.
+            </div>
+          </footer>
+        </ThemeProvider>
       </body>
     </html>
   );
