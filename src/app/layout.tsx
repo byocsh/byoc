@@ -30,6 +30,19 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        {/* Google Analytics */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-V2R00N1VYS" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-V2R00N1VYS');
+            `,
+          }}
+        />
+        {/* Theme initialization */}
         <script
           dangerouslySetInnerHTML={{
             __html: `
