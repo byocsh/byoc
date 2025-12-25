@@ -1,9 +1,9 @@
 "use client";
 
-import Link from "next/link";
 import { useState, useMemo } from "react";
+import Link from "next/link";
 import { GitHubIcon, ExternalLinkIcon } from "@/components/icons";
-import { tools, categories, languages, licenses, starFilters } from "@/data/tools";
+import { tools, categories, languages, licenses, starFilters, getToolLogo, getVendorLogo } from "@/data/tools";
 
 export default function ToolsPage() {
   const [selectedCategory, setSelectedCategory] = useState("all");
@@ -13,7 +13,7 @@ export default function ToolsPage() {
   const [searchQuery, setSearchQuery] = useState("");
 
   const filteredTools = useMemo(() => {
-    let result = tools;
+    let result = [...tools];
 
     if (selectedCategory !== "all") {
       result = result.filter((tool) => tool.category === selectedCategory);
@@ -40,21 +40,35 @@ export default function ToolsPage() {
       result = result.filter(
         (tool) =>
           tool.name.toLowerCase().includes(query) ||
-          tool.description.toLowerCase().includes(query)
+          tool.description.toLowerCase().includes(query) ||
+          tool.vendors.some(
+            (vendor) =>
+              vendor.name.toLowerCase().includes(query) ||
+              vendor.description.toLowerCase().includes(query)
+          )
       );
     }
 
+    // Sort by stars (descending)
+    result.sort((a, b) => {
+      const starsA = parseFloat(a.stars.replace("k", "")) * 1000;
+      const starsB = parseFloat(b.stars.replace("k", "")) * 1000;
+      return starsB - starsA;
+    });
+
     return result;
   }, [selectedCategory, selectedLanguage, selectedLicense, selectedStars, searchQuery]);
+
+  const totalTools = tools.length;
 
   return (
     <div className="min-h-screen">
       <div className="max-w-4xl mx-auto px-6 py-16">
         <h2 className="text-2xl font-semibold mb-6">
-          directory
+          products <span className="text-gray-400 text-lg">({totalTools})</span>
         </h2>
         <p className="text-gray-600 dark:text-gray-400 mb-8">
-          a curated list of byoc vendors and products.
+          open source products available with true BYOC deployment - vendor managed in your cloud.
         </p>
 
         {/* Search */}
@@ -63,7 +77,7 @@ export default function ToolsPage() {
             type="text"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            placeholder="search tools..."
+            placeholder="search products..."
             className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-800 text-sm focus:outline-none focus:border-gray-400 dark:focus:border-gray-600"
           />
         </div>
@@ -126,74 +140,118 @@ export default function ToolsPage() {
         </p>
 
         {/* Tools List */}
-        <div className="space-y-4">
+        <div className="space-y-6">
           {filteredTools.map((tool) => (
-            <Link
+            <div
               key={tool.id}
-              href={`/tools/${tool.id}`}
-              className="block border border-gray-200 dark:border-gray-800 p-5 hover:border-gray-400 dark:hover:border-gray-600 transition-colors"
+              className="border border-gray-200 dark:border-gray-800 p-5"
             >
-              <div className="flex items-start justify-between gap-4">
-                <div className="flex-1">
+              {/* Tool Header */}
+              <div className="flex items-start justify-between gap-4 mb-4">
+                <Link href={`/tools/${tool.id}`} className="flex-1 group">
                   <div className="flex items-center gap-3 mb-2">
-                    <h2 className="text-lg font-semibold">{tool.name}</h2>
+                    <img
+                      src={getToolLogo(tool)}
+                      alt={`${tool.name} logo`}
+                      className="w-6 h-6 object-contain"
+                      onError={(e) => {
+                        e.currentTarget.style.display = 'none';
+                      }}
+                    />
+                    <h2 className="text-xl font-semibold group-hover:text-gray-600 dark:group-hover:text-gray-300 transition-colors">{tool.name}</h2>
                     <span className="text-xs px-2 py-0.5 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
                       {tool.category}
                     </span>
-                    {tool.vendors.length > 0 && (
-                      <span className="text-xs px-2 py-0.5 bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300">
-                        {tool.vendors.length} managed
-                      </span>
-                    )}
                   </div>
                   <p className="text-gray-600 dark:text-gray-400 text-sm mb-3">
                     {tool.description}
                   </p>
-                  <div className="flex flex-wrap items-center gap-4 text-xs text-gray-500">
+                  <div className="flex flex-wrap items-center gap-3 text-xs text-gray-500">
                     <span>★ {tool.stars}</span>
                     <span>{tool.language}</span>
                     <span>{tool.license}</span>
                   </div>
-                </div>
-                <div className="flex items-center gap-3">
-                  <span
-                    onClick={(e) => {
-                      e.preventDefault();
-                      window.open(tool.github, "_blank");
-                    }}
-                    className="text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors cursor-pointer"
+                </Link>
+                <div className="flex items-center gap-2">
+                  <a
+                    href={tool.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
                   >
                     <GitHubIcon className="w-5 h-5" />
-                  </span>
+                  </a>
                   {tool.website && (
-                    <span
-                      onClick={(e) => {
-                        e.preventDefault();
-                        window.open(tool.website, "_blank");
-                      }}
-                      className="text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors cursor-pointer"
+                    <a
+                      href={tool.website}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
                     >
                       <ExternalLinkIcon className="w-5 h-5" />
-                    </span>
+                    </a>
                   )}
                 </div>
               </div>
-            </Link>
+
+              {/* BYOC Vendors */}
+              <div className="space-y-2">
+                <p className="text-xs text-gray-500 uppercase tracking-wide mb-2">
+                  Available from {tool.vendors.length} BYOC vendor{tool.vendors.length !== 1 ? "s" : ""}:
+                </p>
+                <div className="space-y-2">
+                  {tool.vendors.map((vendor) => (
+                    <a
+                      key={vendor.name}
+                      href={vendor.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block p-3 bg-gray-50 dark:bg-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                    >
+                      <div className="flex items-start justify-between gap-3">
+                        <div className="flex-1">
+                          <div className="flex items-center gap-2 mb-1">
+                            <img
+                              src={getVendorLogo(vendor)}
+                              alt={`${vendor.name} logo`}
+                              className="w-4 h-4 object-contain"
+                              onError={(e) => {
+                                e.currentTarget.style.display = 'none';
+                              }}
+                            />
+                            <h3 className="text-sm font-medium">{vendor.name}</h3>
+                            {vendor.pricing && (
+                              <span className="text-xs px-2 py-0.5 bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300">
+                                {vendor.pricing}
+                              </span>
+                            )}
+                          </div>
+                          <p className="text-xs text-gray-600 dark:text-gray-400">
+                            {vendor.description}
+                          </p>
+                        </div>
+                        <ExternalLinkIcon className="w-4 h-4 text-gray-400 flex-shrink-0" />
+                      </div>
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
           ))}
         </div>
 
         {filteredTools.length === 0 && (
           <div className="text-center py-16 text-gray-500">
-            <p>no tools found matching your criteria.</p>
+            <p>no products found matching your criteria.</p>
             <p className="text-sm mt-2">try adjusting your filters.</p>
           </div>
         )}
 
         {/* Submit CTA */}
         <div className="mt-16 p-6 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-800">
-          <h3 className="font-semibold mb-2">submit a tool</h3>
+          <h3 className="font-semibold mb-2">submit a product</h3>
           <p className="text-gray-600 dark:text-gray-400 text-sm">
-            know a great self-hostable tool that&apos;s missing from our list?{" "}
+            know a great open source product with BYOC deployment that&apos;s missing?{" "}
             <a href="https://github.com/byocsh/byoc" className="underline hover:no-underline">
               open a PR on github
             </a>{" "}

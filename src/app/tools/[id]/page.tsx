@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useParams } from "next/navigation";
-import { getToolById } from "@/data/tools";
+import { getToolById, getToolLogo, getVendorLogo } from "@/data/tools";
 import { GitHubIcon, ExternalLinkIcon } from "@/components/icons";
 import { CVEList } from "@/components/cve-list";
 
@@ -14,12 +14,12 @@ export default function ToolDetailPage() {
     return (
       <div className="min-h-screen">
         <div className="max-w-4xl mx-auto px-6 py-16">
-          <h1 className="text-2xl font-bold mb-4">Tool not found</h1>
+          <h1 className="text-2xl font-bold mb-4">Product not found</h1>
           <p className="text-gray-600 dark:text-gray-400 mb-6">
-            The tool you&apos;re looking for doesn&apos;t exist.
+            The product you&apos;re looking for doesn&apos;t exist.
           </p>
           <Link href="/tools" className="underline hover:no-underline">
-            ← back to tools
+            ← back to products
           </Link>
         </div>
       </div>
@@ -32,7 +32,7 @@ export default function ToolDetailPage() {
         {/* Breadcrumb */}
         <div className="text-sm text-gray-500 mb-8">
           <Link href="/tools" className="hover:text-gray-900 dark:hover:text-white">
-            tools
+            products
           </Link>
           {" / "}
           <span className="text-gray-900 dark:text-white">{tool.name.toLowerCase()}</span>
@@ -41,8 +41,18 @@ export default function ToolDetailPage() {
         {/* Header */}
         <div className="mb-12">
           <div className="flex items-start justify-between gap-4 mb-4">
-            <div>
-              <h1 className="text-3xl md:text-4xl font-bold mb-2">{tool.name}</h1>
+            <div className="flex-1">
+              <div className="flex items-center gap-3 mb-3">
+                <img
+                  src={getToolLogo(tool)}
+                  alt={`${tool.name} logo`}
+                  className="w-12 h-12 object-contain"
+                  onError={(e) => {
+                    e.currentTarget.style.display = 'none';
+                  }}
+                />
+                <h1 className="text-3xl md:text-4xl font-bold">{tool.name}</h1>
+              </div>
               <p className="text-gray-600 dark:text-gray-400 text-lg">
                 {tool.description}
               </p>
@@ -95,6 +105,14 @@ export default function ToolDetailPage() {
                   <div className="flex items-start justify-between gap-4">
                     <div className="flex-1">
                       <div className="flex items-center gap-3 mb-1">
+                        <img
+                          src={getVendorLogo(vendor)}
+                          alt={`${vendor.name} logo`}
+                          className="w-5 h-5 object-contain"
+                          onError={(e) => {
+                            e.currentTarget.style.display = 'none';
+                          }}
+                        />
                         <h3 className="font-semibold">{vendor.name}</h3>
                         {vendor.pricing && (
                           <span className="text-xs px-2 py-0.5 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
@@ -166,7 +184,7 @@ export default function ToolDetailPage() {
         {/* Back link */}
         <div className="mt-12 pt-8 border-t border-gray-200 dark:border-gray-800">
           <Link href="/tools" className="text-sm text-gray-500 hover:text-gray-900 dark:hover:text-white">
-            ← back to all tools
+            ← back to all products
           </Link>
         </div>
       </div>

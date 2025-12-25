@@ -1,7 +1,9 @@
-import type { Metadata } from "next";
+"use client";
+
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { GitHubIcon } from "@/components/icons";
 import { ThemeProvider } from "@/components/theme-provider";
 import { ThemeToggle } from "@/components/theme-toggle";
@@ -16,19 +18,17 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: "BYOC - Bring Your Own Cloud",
-  description: "A curated directory of open source tools you can self-host",
-};
-
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const pathname = usePathname();
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        <title>BYOC - Bring Your Own Cloud</title>
+        <meta name="description" content="A curated directory of open source tools you can self-host" />
         {/* Google Analytics */}
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-V2R00N1VYS" />
         <script
@@ -67,13 +67,44 @@ export default function RootLayout({
                 byoc.sh
               </Link>
               <div className="flex items-center gap-6">
-                <Link href="/" className="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
+                <Link
+                  href="/"
+                  className={`text-sm transition-colors ${
+                    pathname === "/"
+                      ? "text-gray-900 dark:text-white font-medium"
+                      : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
+                  }`}
+                >
                   home
                 </Link>
-                <Link href="/tools" className="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
-                  tools
+                <Link
+                  href="/vendors"
+                  className={`text-sm transition-colors ${
+                    pathname === "/vendors"
+                      ? "text-gray-900 dark:text-white font-medium"
+                      : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
+                  }`}
+                >
+                  vendors
                 </Link>
-                <Link href="/about" className="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
+                <Link
+                  href="/tools"
+                  className={`text-sm transition-colors ${
+                    pathname === "/tools"
+                      ? "text-gray-900 dark:text-white font-medium"
+                      : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
+                  }`}
+                >
+                  products
+                </Link>
+                <Link
+                  href="/about"
+                  className={`text-sm transition-colors ${
+                    pathname === "/about"
+                      ? "text-gray-900 dark:text-white font-medium"
+                      : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
+                  }`}
+                >
                   about
                 </Link>
                 <Link
@@ -92,7 +123,8 @@ export default function RootLayout({
           </main>
           <footer className="border-t border-gray-200 dark:border-gray-800 mt-20">
             <div className="max-w-4xl mx-auto px-6 py-8 text-center text-sm text-gray-500">
-              built with ♥ by <Link href="https://parseable.com" target="_blank" className="hover:text-gray-900 dark:hover:text-white">Parseable</Link>
+              <p className="mb-2">built with ♥ by <Link href="https://parseable.com" target="_blank" className="hover:text-gray-900 dark:hover:text-white">Parseable</Link></p>
+              <p className="text-xs">all trademarks, logos, and brand names are the property of their respective owners. all company, product and service names used in this directory are for identification purposes only.</p>
             </div>
           </footer>
         </ThemeProvider>
