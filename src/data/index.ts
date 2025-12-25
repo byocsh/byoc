@@ -1,65 +1,69 @@
+// AUTO-GENERATED FILE - DO NOT EDIT MANUALLY
+// Run 'pnpm generate-data' to regenerate this file
+
 // Import all product JSON files
-import postgresql from './products/postgresql.json';
-import pocketbase from './products/pocketbase.json';
-import clickhouse from './products/clickhouse.json';
-import prometheus from './products/prometheus.json';
-import grafana from './products/grafana.json';
-import uptimeKuma from './products/uptime-kuma.json';
-import drone from './products/drone.json';
-import coolify from './products/coolify.json';
-import cockroachdb from './products/cockroachdb.json';
-import cassandra from './products/cassandra.json';
-import mysql from './products/mysql.json';
-import mongodb from './products/mongodb.json';
-import redis from './products/redis.json';
-import singlestore from './products/singlestore.json';
-import kafka from './products/kafka.json';
-import redpanda from './products/redpanda.json';
-import pulsar from './products/pulsar.json';
-import flink from './products/flink.json';
 import airbyte from './products/airbyte.json';
-import nifi from './products/nifi.json';
-import milvus from './products/milvus.json';
-import weaviate from './products/weaviate.json';
-import qdrant from './products/qdrant.json';
-import pinecone from './products/pinecone.json';
-import turbopuffer from './products/turbopuffer.json';
-import opensearch from './products/opensearch.json';
-import pinot from './products/pinot.json';
-import druid from './products/druid.json';
+import cassandra from './products/cassandra.json';
+import clickhouse from './products/clickhouse.json';
+import cockroachdb from './products/cockroachdb.json';
+import coolify from './products/coolify.json';
 import databricks from './products/databricks.json';
+import drone from './products/drone.json';
+import druid from './products/druid.json';
+import flink from './products/flink.json';
+import grafana from './products/grafana.json';
+import kafka from './products/kafka.json';
+import milvus from './products/milvus.json';
+import mongodb from './products/mongodb.json';
+import mysql from './products/mysql.json';
+import nifi from './products/nifi.json';
+import opensearch from './products/opensearch.json';
+import pinecone from './products/pinecone.json';
+import pinot from './products/pinot.json';
+import pocketbase from './products/pocketbase.json';
+import postgresql from './products/postgresql.json';
+import prometheus from './products/prometheus.json';
+import pulsar from './products/pulsar.json';
+import qdrant from './products/qdrant.json';
+import redis from './products/redis.json';
+import redpanda from './products/redpanda.json';
+import singlestore from './products/singlestore.json';
+import turbopuffer from './products/turbopuffer.json';
+import uptimeKuma from './products/uptime-kuma.json';
+import weaviate from './products/weaviate.json';
 
 // Import all vendor JSON files
-import awsRds from './vendors/aws-rds.json';
-import railway from './vendors/railway.json';
-import elestio from './vendors/elestio.json';
-import clickhouseCloud from './vendors/clickhouse-cloud.json';
-import altinity from './vendors/altinity.json';
-import doublecloud from './vendors/doublecloud.json';
-import grafanaCloud from './vendors/grafana-cloud.json';
-import awsManagedPrometheus from './vendors/aws-managed-prometheus.json';
-import harness from './vendors/harness.json';
-import coolifyCloud from './vendors/coolify-cloud.json';
-import cockroachdbCloud from './vendors/cockroachdb-cloud.json';
-import instaclustr from './vendors/instaclustr.json';
-import scalegrid from './vendors/scalegrid.json';
-import aiven from './vendors/aiven.json';
-import redisCloud from './vendors/redis-cloud.json';
-import singlestoreHelios from './vendors/singlestore-helios.json';
-import confluentCloud from './vendors/confluent-cloud.json';
-import redpandaCloud from './vendors/redpanda-cloud.json';
-import streamnative from './vendors/streamnative.json';
-import ververica from './vendors/ververica.json';
 import airbyteCloud from './vendors/airbyte-cloud.json';
-import snowflakeOpenflow from './vendors/snowflake-openflow.json';
-import zillizCloud from './vendors/zilliz-cloud.json';
-import weaviateCloud from './vendors/weaviate-cloud.json';
-import qdrantCloud from './vendors/qdrant-cloud.json';
-import pineconeBYOC from './vendors/pinecone-byoc.json';
-import turbopufferBYOC from './vendors/turbopuffer-byoc.json';
-import startree from './vendors/startree.json';
+import aiven from './vendors/aiven.json';
+import altinity from './vendors/altinity.json';
+import awsManagedPrometheus from './vendors/aws-managed-prometheus.json';
+import awsRds from './vendors/aws-rds.json';
+import clickhouseCloud from './vendors/clickhouse-cloud.json';
+import cockroachdbCloud from './vendors/cockroachdb-cloud.json';
+import confluentCloud from './vendors/confluent-cloud.json';
+import coolifyCloud from './vendors/coolify-cloud.json';
+import databricksByoc from './vendors/databricks-byoc.json';
+import doublecloud from './vendors/doublecloud.json';
+import elestio from './vendors/elestio.json';
+import grafanaCloud from './vendors/grafana-cloud.json';
+import harness from './vendors/harness.json';
 import imply from './vendors/imply.json';
-import databricksBYOC from './vendors/databricks-byoc.json';
+import instaclustr from './vendors/instaclustr.json';
+import parseableInc from './vendors/parseable-inc.json';
+import pineconeByoc from './vendors/pinecone-byoc.json';
+import qdrantCloud from './vendors/qdrant-cloud.json';
+import railway from './vendors/railway.json';
+import redisCloud from './vendors/redis-cloud.json';
+import redpandaCloud from './vendors/redpanda-cloud.json';
+import scalegrid from './vendors/scalegrid.json';
+import singlestoreHelios from './vendors/singlestore-helios.json';
+import snowflakeOpenflow from './vendors/snowflake-openflow.json';
+import startree from './vendors/startree.json';
+import streamnative from './vendors/streamnative.json';
+import turbopufferByoc from './vendors/turbopuffer-byoc.json';
+import ververica from './vendors/ververica.json';
+import weaviateCloud from './vendors/weaviate-cloud.json';
+import zillizCloud from './vendors/zilliz-cloud.json';
 
 // Types
 export interface VendorData {
@@ -111,19 +115,69 @@ export interface Tool {
 
 // Raw data arrays
 export const productsData: ProductData[] = [
-  postgresql, pocketbase, clickhouse, prometheus, grafana, uptimeKuma,
-  drone, coolify, cockroachdb, cassandra, mysql, mongodb, redis, singlestore,
-  kafka, redpanda, pulsar, flink, airbyte, nifi, milvus, weaviate, qdrant,
-  pinecone, turbopuffer, opensearch, pinot, druid, databricks
+  airbyte,
+  cassandra,
+  clickhouse,
+  cockroachdb,
+  coolify,
+  databricks,
+  drone,
+  druid,
+  flink,
+  grafana,
+  kafka,
+  milvus,
+  mongodb,
+  mysql,
+  nifi,
+  opensearch,
+  pinecone,
+  pinot,
+  pocketbase,
+  postgresql,
+  prometheus,
+  pulsar,
+  qdrant,
+  redis,
+  redpanda,
+  singlestore,
+  turbopuffer,
+  uptimeKuma,
+  weaviate
 ] as ProductData[];
 
 export const vendorsData: VendorData[] = [
-  awsRds, railway, elestio, clickhouseCloud, altinity, doublecloud,
-  grafanaCloud, awsManagedPrometheus, harness, coolifyCloud, cockroachdbCloud,
-  instaclustr, scalegrid, aiven, redisCloud, singlestoreHelios, confluentCloud,
-  redpandaCloud, streamnative, ververica, airbyteCloud, snowflakeOpenflow,
-  zillizCloud, weaviateCloud, qdrantCloud, pineconeBYOC, turbopufferBYOC,
-  startree, imply, databricksBYOC
+  airbyteCloud,
+  aiven,
+  altinity,
+  awsManagedPrometheus,
+  awsRds,
+  clickhouseCloud,
+  cockroachdbCloud,
+  confluentCloud,
+  coolifyCloud,
+  databricksByoc,
+  doublecloud,
+  elestio,
+  grafanaCloud,
+  harness,
+  imply,
+  instaclustr,
+  parseableInc,
+  pineconeByoc,
+  qdrantCloud,
+  railway,
+  redisCloud,
+  redpandaCloud,
+  scalegrid,
+  singlestoreHelios,
+  snowflakeOpenflow,
+  startree,
+  streamnative,
+  turbopufferByoc,
+  ververica,
+  weaviateCloud,
+  zillizCloud
 ] as VendorData[];
 
 // Create vendor lookup map
