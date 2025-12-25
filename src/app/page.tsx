@@ -1,57 +1,60 @@
 export default function Home() {
   return (
     <div className="min-h-screen">
-      <div className="max-w-3xl mx-auto px-6 py-16">
-        <h1 className="text-3xl md:text-4xl font-bold mb-12">
-          bring your own cloud.
-        </h1>
-
+      <div className="max-w-4xl mx-auto px-6 py-16">
+        <h2 className="text-2xl font-semibold mb-6">
+          the byoc manifesto
+        </h2>
         <div className="space-y-6 text-gray-600 dark:text-gray-400 leading-relaxed">
-          <p>dear friend,</p>
+          <h3 className="font-semibold mb-6">
+            byoc = bring your own cloud
+          </h3>
 
           <p>
-            <strong className="text-gray-900 dark:text-white">open source</strong> has transformed how we build software. 
-            but there&apos;s a catch – most tools today force you into their cloud, 
-            their pricing, their rules.
+            the byoc paradigm is based on a simple idea - SaaS like user experience, with the control and security of self hosting. with true byoc, vendor deploys, upgrades, and operates. buyer keeps their data, compliance, cloud spend, and exit options.
           </p>
+
+          <h3 className="font-semibold mb-6">
+            byoc ≠ self hosting
+          </h3>
 
           <p>
-            we believe in a different approach: <strong className="text-gray-900 dark:text-white">bring your own cloud (byoc)</strong>. 
-            run powerful tools on your infrastructure. keep your data where it belongs. 
-            pay only for what you use.
+            self hosting forces buyer to take on operational burden, and vendor to support a wide variety of environments. byoc allows 
           </p>
+
+          <h3 className="font-semibold mb-6">
+            LLMs are just the beginning
+          </h3>
 
           <p>
-            <a href="/" className="underline hover:no-underline">byoc.sh</a> is a curated directory of open source 
-            tools that you can self-host. think of it as <strong className="text-gray-900 dark:text-white">awesome-byoc</strong> – 
-            a community-maintained list of the best software designed to run on your own infrastructure.
+            the byoc model is especially important for LLM applications, where data privacy, compliance, and cloud costs are critical. but byoc is not limited to LLMs - it applies to any software where data control matters.
           </p>
+
+          <h3 className="font-semibold mb-6">
+            data has gravity
+          </h3>
 
           <p>
-            we don&apos;t build these tools. we don&apos;t host them. we just help you discover them.
+            as organizations grow, their data inevitably accumulates in a few major clouds. moving data is expensive, slow, and risky. byoc lets buyers leverage existing cloud investments, while still getting the benefits of SaaS.
           </p>
 
-          <div className="my-10 p-6 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-800 font-mono text-sm">
-            <p className="text-gray-500 mb-2"># your cloud, your rules</p>
-            <p>docker run -d your-favorite-tool</p>
-          </div>
-
+          <h3 className="font-semibold mb-6">
+            security is a shared responsibility
+          </h3>
+          
           <p>
-            whether you&apos;re looking for databases, monitoring, CI/CD, or anything else – 
-            we&apos;ve got a list of battle-tested, self-hostable alternatives to popular SaaS products.
+            security is only as strong as its weakest link. byoc lets buyers enforce their own security policies, while vendors can focus on securing the application itself.
           </p>
 
+          <h3 className="font-semibold mb-6">
+            /fin/
+          </h3>
           <p>
-            check out our <a href="/tools" className="underline hover:no-underline">tools directory</a> to find your next self-hosted solution.
+            byoc is the future of software delivery for the data conscious enterprise. it combines the best of both worlds - SaaS convenience with self hosting control. 
           </p>
 
-          <p>
-            open source is the future. and with byoc, that future is in your hands.
-          </p>
-
-          <p className="mt-12">
-            best,<br />
-            <strong className="text-gray-900 dark:text-white">the byoc community</strong>
+          <p className="font-semibold">
+            if you're buying software, ask for byoc. if you're building software, offer byoc. 
           </p>
         </div>
       </div>

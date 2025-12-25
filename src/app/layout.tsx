@@ -5,7 +5,6 @@ import Link from "next/link";
 import { GitHubIcon } from "@/components/icons";
 import { ThemeProvider } from "@/components/theme-provider";
 import { ThemeToggle } from "@/components/theme-toggle";
-import { P5Background } from "@/components/p5-background";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -62,7 +61,6 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white dark:bg-black text-gray-900 dark:text-gray-100`}
       >
         <ThemeProvider>
-          <P5Background />
           <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-black/80 backdrop-blur-sm border-b border-gray-200 dark:border-gray-800">
             <div className="max-w-4xl mx-auto px-6 py-4 flex justify-between items-center">
               <Link href="/" className="font-semibold text-lg tracking-tight">
@@ -74,6 +72,9 @@ export default function RootLayout({
                 </Link>
                 <Link href="/tools" className="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
                   tools
+                </Link>
+                <Link href="/about" className="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
+                  about
                 </Link>
                 <Link
                   href="https://github.com/byocsh/byoc"
