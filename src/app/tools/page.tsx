@@ -64,9 +64,17 @@ export default function ToolsPage() {
   return (
     <div className="min-h-screen">
       <div className="max-w-4xl mx-auto px-6 py-16">
-        <h2 className="text-2xl font-semibold mb-6">
-          products <span className="text-gray-400 text-lg">({totalTools})</span>
-        </h2>
+        <div className="flex items-center justify-between mb-6">
+          <h2 className="text-2xl font-semibold">
+            products <span className="text-gray-400 text-lg">({totalTools})</span>
+          </h2>
+          <Link
+            href="/submit/product"
+            className="px-4 py-2 border border-gray-900 dark:border-gray-100 text-gray-900 dark:text-gray-100 text-sm font-medium rounded-lg"
+          >
+            List a Product
+          </Link>
+        </div>
         <p className="text-gray-600 dark:text-gray-400 mb-8">
           open source products available with true BYOC deployment - vendor managed in your cloud.
         </p>

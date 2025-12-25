@@ -115,9 +115,17 @@ export default function VendorsPage() {
   return (
     <div className="min-h-screen">
       <div className="max-w-4xl mx-auto px-6 py-16">
-        <h2 className="text-2xl font-semibold mb-6">
-          vendors <span className="text-gray-400 text-lg">({totalVendors})</span>
-        </h2>
+        <div className="flex items-center justify-between mb-6">
+          <h2 className="text-2xl font-semibold">
+            vendors <span className="text-gray-400 text-lg">({totalVendors})</span>
+          </h2>
+          <Link
+            href="/submit/vendor"
+            className="px-4 py-2 border border-gray-900 dark:border-gray-100 text-gray-900 dark:text-gray-100 text-sm font-medium rounded-lg"
+          >
+            Get Listed
+          </Link>
+        </div>
         <p className="text-gray-600 dark:text-gray-400 mb-8">
           vendors who manage and operate open source software in your cloud account - true bring your own cloud.
         </p>
