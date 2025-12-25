@@ -1,0 +1,10 @@
+{
+  "id": "parseable-inc",
+  "name": "Parseable Inc",
+  "url": "https://parseable.com/",
+  "description": "Parseable is a purpose built telemetry datalake. Enabling Predictive, unified observability—faster resolution, fewer escalations, happier customers.\nCut observability costs by up to 85%.\n\n",
+  "pricing": "Pay-as-you-go",
+  "products": [
+    "parseable"
+  ]
+}
