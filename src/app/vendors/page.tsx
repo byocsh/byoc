@@ -20,6 +20,14 @@ interface VendorWithTools {
     stars: string;
     language: string;
     license: string;
+    logo?: string;
+    vendors: Array<{
+      name: string;
+      url: string;
+      description: string;
+      pricing?: string;
+      logo?: string;
+    }>;
   }>;
 }
 
