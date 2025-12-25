@@ -1,0 +1,12 @@
+{
+  "id": "kafka",
+  "name": "Apache Kafka",
+  "description": "Distributed event streaming platform for high-performance data pipelines.",
+  "category": "streaming",
+  "github": "https://github.com/apache/kafka",
+  "website": "https://kafka.apache.org/",
+  "stars": "29.0k",
+  "language": "Java",
+  "license": "Apache-2.0",
+  "vendors": ["confluent-cloud", "aiven", "instaclustr"]
+}

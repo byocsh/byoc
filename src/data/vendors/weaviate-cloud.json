@@ -1,0 +1,8 @@
+{
+  "id": "weaviate-cloud",
+  "name": "Weaviate Cloud",
+  "url": "https://weaviate.io/deployment/byoc",
+  "description": "BYOC on AWS, GCP, Azure with managed Kubernetes. CloudFormation templates for easy AWS deployment.",
+  "pricing": "Premium tier",
+  "products": ["weaviate"]
+}

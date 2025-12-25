@@ -1,0 +1,8 @@
+{
+  "id": "doublecloud",
+  "name": "DoubleCloud",
+  "url": "https://double.cloud/",
+  "description": "Managed ClickHouse in your AWS or GCP account (service winding down).",
+  "pricing": "Pay-as-you-go",
+  "products": ["clickhouse"]
+}

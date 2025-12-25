@@ -1,0 +1,8 @@
+{
+  "id": "singlestore-helios",
+  "name": "SingleStore Helios",
+  "url": "https://docs.singlestore.com/cloud/getting-started-with-singlestore-helios/helios-byoc/",
+  "description": "BYOC on AWS - data never leaves your VPC, zero public IPs or inbound ports.",
+  "pricing": "Contact sales",
+  "products": ["singlestore"]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "aws-rds",
+  "name": "AWS RDS",
+  "url": "https://aws.amazon.com/rds/postgresql/",
+  "description": "Runs in your AWS VPC with managed operations by AWS.",
+  "pricing": "Pay-as-you-go",
+  "products": ["postgresql"]
+}

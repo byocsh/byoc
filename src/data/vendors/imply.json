@@ -1,0 +1,8 @@
+{
+  "id": "imply",
+  "name": "Imply",
+  "url": "https://imply.io/product/imply-cloud",
+  "description": "Enterprise Hybrid deployment - run Druid in your AWS VPC with Imply management.",
+  "pricing": "Contact sales",
+  "products": ["druid"]
+}

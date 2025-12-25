@@ -1,0 +1,8 @@
+{
+  "id": "coolify-cloud",
+  "name": "Coolify Cloud",
+  "url": "https://coolify.io/",
+  "description": "True BYOC - bring your servers, Coolify manages deployments from control plane.",
+  "pricing": "From $5/mo",
+  "products": ["coolify"]
+}

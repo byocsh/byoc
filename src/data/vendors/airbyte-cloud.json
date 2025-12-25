@@ -1,0 +1,8 @@
+{
+  "id": "airbyte-cloud",
+  "name": "Airbyte Cloud",
+  "url": "https://airbyte.com/product/platform",
+  "description": "Hybrid BYOC - data plane in your infrastructure, control plane managed by Airbyte. Sensitive data never leaves your VPC.",
+  "pricing": "Contact sales",
+  "products": ["airbyte"]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "databricks-byoc",
+  "name": "Databricks",
+  "url": "https://docs.databricks.com/aws/en/security/network/classic/customer-managed-vpc",
+  "description": "Customer-managed VPC on AWS, Azure, GCP - data plane in your VPC, control plane managed by Databricks.",
+  "pricing": "Enterprise tier",
+  "products": ["databricks"]
+}

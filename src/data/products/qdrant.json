@@ -1,0 +1,12 @@
+{
+  "id": "qdrant",
+  "name": "Qdrant",
+  "description": "High-performance vector database with advanced filtering.",
+  "category": "vector-db",
+  "github": "https://github.com/qdrant/qdrant",
+  "website": "https://qdrant.tech/",
+  "stars": "21.5k",
+  "language": "Rust",
+  "license": "Apache-2.0",
+  "vendors": ["qdrant-cloud"]
+}

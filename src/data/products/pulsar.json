@@ -1,0 +1,12 @@
+{
+  "id": "pulsar",
+  "name": "Apache Pulsar",
+  "description": "Cloud-native distributed messaging and streaming platform.",
+  "category": "streaming",
+  "github": "https://github.com/apache/pulsar",
+  "website": "https://pulsar.apache.org/",
+  "stars": "14.3k",
+  "language": "Java",
+  "license": "Apache-2.0",
+  "vendors": ["streamnative"]
+}

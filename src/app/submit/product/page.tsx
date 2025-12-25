@@ -2,7 +2,7 @@
 
 import { useState, useCallback } from "react";
 import Link from "next/link";
-import { categories, languages, licenses } from "@/data/tools";
+import { categories, languages, licenses } from "@/data";
 
 export default function SubmitProductPage() {
   const [formData, setFormData] = useState({
@@ -86,54 +86,35 @@ export default function SubmitProductPage() {
     }
   };
 
-  const generateProductEntry = () => {
+  const generateProductJSON = () => {
     // Generate a slug from product name
     const slug = formData.productName.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
     
-    // Create the product entry that would be added to tools.ts
-    const productEntry = `# Product Submission: ${formData.productName}
-
-## Product Information
-- **Name:** ${formData.productName}
-- **Description:** ${formData.description}
-- **Category:** ${formData.category}
-- **GitHub:** ${formData.githubUrl}
-- **Website:** ${formData.websiteUrl || "N/A"}
-- **Language:** ${formData.language}
-- **License:** ${formData.license}
-- **Stars:** ${formData.stars || "N/A"}
-
-## Additional Notes
-${formData.additionalNotes || "N/A"}
-
-## Contact
-${formData.contactEmail || "N/A"}
-
----
-
-### Code to add to src/data/tools.ts:
-
-\`\`\`typescript
-{
-  id: "${slug}",
-  name: "${formData.productName}",
-  description: "${formData.description}",
-  category: "${formData.category}",
-  github: "${formData.githubUrl}",
-  website: "${formData.websiteUrl || ""}",
-  stars: "${formData.stars || "0"}",
-  language: "${formData.language}",
-  license: "${formData.license}",
-  vendors: [],
-},
-\`\`\`
-`;
-    return { slug, content: productEntry };
+    // Create the product JSON
+    const productData = {
+      id: slug,
+      name: formData.productName,
+      description: formData.description,
+      category: formData.category,
+      github: formData.githubUrl || undefined,
+      website: formData.websiteUrl || undefined,
+      stars: formData.stars || undefined,
+      language: formData.language,
+      license: formData.license,
+      vendors: []
+    };
+    
+    // Remove undefined values
+    const cleanedData = Object.fromEntries(
+      Object.entries(productData).filter(([, v]) => v !== undefined)
+    );
+    
+    return { slug, content: JSON.stringify(cleanedData, null, 2) };
   };
 
   const generateGitHubPRUrl = () => {
-    const { slug, content } = generateProductEntry();
-    const filename = `submissions/products/${slug}.md`;
+    const { slug, content } = generateProductJSON();
+    const filename = `src/data/products/${slug}.json`;
     const encodedContent = encodeURIComponent(content);
     const message = encodeURIComponent(`Add product: ${formData.productName}`);
     

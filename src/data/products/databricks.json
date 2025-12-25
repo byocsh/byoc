@@ -1,0 +1,12 @@
+{
+  "id": "databricks",
+  "name": "Databricks",
+  "description": "Unified analytics platform for big data and AI built on Apache Spark.",
+  "category": "analytics",
+  "github": "https://github.com/databricks",
+  "website": "https://www.databricks.com/",
+  "stars": "3.0k",
+  "language": "Scala",
+  "license": "Apache-2.0",
+  "vendors": ["databricks-byoc"]
+}

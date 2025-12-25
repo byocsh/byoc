@@ -1,0 +1,12 @@
+{
+  "id": "pocketbase",
+  "name": "PocketBase",
+  "description": "Open source backend in a single file with realtime database and auth.",
+  "category": "databases",
+  "github": "https://github.com/pocketbase/pocketbase",
+  "website": "https://pocketbase.io/",
+  "stars": "41.2k",
+  "language": "Go",
+  "license": "MIT",
+  "vendors": ["railway", "elestio"]
+}

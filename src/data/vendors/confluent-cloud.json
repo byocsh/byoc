@@ -1,0 +1,8 @@
+{
+  "id": "confluent-cloud",
+  "name": "Confluent Cloud",
+  "url": "https://www.confluent.io/learn/bring-your-own-cloud/",
+  "description": "WarpStream BYOC - diskless Kafka in your VPC with data in your object storage. 80% more cost-effective.",
+  "pricing": "Pay for writes + storage only",
+  "products": ["kafka"]
+}

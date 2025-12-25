@@ -1,0 +1,12 @@
+{
+  "id": "prometheus",
+  "name": "Prometheus",
+  "description": "Monitoring system and time series database for metrics.",
+  "category": "observability",
+  "github": "https://github.com/prometheus/prometheus",
+  "website": "https://prometheus.io/",
+  "stars": "55.6k",
+  "language": "Go",
+  "license": "Apache-2.0",
+  "vendors": ["grafana-cloud", "aws-managed-prometheus"]
+}

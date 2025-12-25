@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useState, useMemo } from "react";
 import { GitHubIcon, ExternalLinkIcon } from "@/components/icons";
-import { tools, categories, languages, licenses, starFilters, getVendorLogo, getToolLogo } from "@/data/tools";
+import { tools, categories, languages, licenses, starFilters, getVendorLogo, getToolLogo } from "@/data";
 
 interface VendorWithTools {
   name: string;

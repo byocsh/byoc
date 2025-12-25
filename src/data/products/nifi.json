@@ -1,0 +1,12 @@
+{
+  "id": "nifi",
+  "name": "Apache NiFi",
+  "description": "Easy-to-use data ingestion and distribution system for data routing.",
+  "category": "streaming",
+  "github": "https://github.com/apache/nifi",
+  "website": "https://nifi.apache.org/",
+  "stars": "4.9k",
+  "language": "Java",
+  "license": "Apache-2.0",
+  "vendors": ["snowflake-openflow"]
+}

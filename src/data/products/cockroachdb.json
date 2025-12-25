@@ -1,0 +1,12 @@
+{
+  "id": "cockroachdb",
+  "name": "CockroachDB",
+  "description": "Cloud-native distributed SQL database that survives disasters.",
+  "category": "databases",
+  "github": "https://github.com/cockroachdb/cockroach",
+  "website": "https://www.cockroachlabs.com/",
+  "stars": "30.1k",
+  "language": "Go",
+  "license": "Apache-2.0",
+  "vendors": ["cockroachdb-cloud"]
+}

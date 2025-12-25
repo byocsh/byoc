@@ -1,0 +1,8 @@
+{
+  "id": "ververica",
+  "name": "Ververica",
+  "url": "https://www.ververica.com/blog/introducing-byoc-deployment",
+  "description": "Managed Flink BYOC on AWS (GA Jan 2025) with Zero Trust security.",
+  "pricing": "Via AWS Marketplace",
+  "products": ["flink"]
+}

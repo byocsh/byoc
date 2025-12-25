@@ -1,0 +1,8 @@
+{
+  "id": "elestio",
+  "name": "Elestio",
+  "url": "https://elest.io/",
+  "description": "Bring your own VM from any provider, Elestio manages the software.",
+  "pricing": "From $17/mo",
+  "products": ["pocketbase", "uptime-kuma"]
+}

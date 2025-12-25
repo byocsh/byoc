@@ -1,0 +1,8 @@
+{
+  "id": "pinecone-byoc",
+  "name": "Pinecone",
+  "url": "https://www.pinecone.io/product/bring-your-own-cloud/",
+  "description": "BYOC on AWS and GCP - dedicated data plane in your VPC with Terraform deployment. Private endpoint connectivity.",
+  "pricing": "Dedicated Plan",
+  "products": ["pinecone"]
+}

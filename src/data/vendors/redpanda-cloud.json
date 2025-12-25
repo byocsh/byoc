@@ -1,0 +1,8 @@
+{
+  "id": "redpanda-cloud",
+  "name": "Redpanda Cloud",
+  "url": "https://www.redpanda.com/product/bring-your-own-cloud-byoc",
+  "description": "BYOC on AWS, GCP, Azure - you own data plane, Redpanda manages control plane. Up to 4 GB/s throughput.",
+  "pricing": "Via AWS/GCP Marketplace",
+  "products": ["redpanda"]
+}

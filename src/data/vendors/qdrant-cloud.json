@@ -1,0 +1,8 @@
+{
+  "id": "qdrant-cloud",
+  "name": "Qdrant Cloud",
+  "url": "https://qdrant.tech/cloud/",
+  "description": "Hybrid Cloud BYOC - most flexible deployment on any cloud, on-prem, or edge with Kubernetes-native architecture.",
+  "pricing": "Bring your cluster",
+  "products": ["qdrant"]
+}

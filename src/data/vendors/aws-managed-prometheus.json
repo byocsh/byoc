@@ -1,0 +1,8 @@
+{
+  "id": "aws-managed-prometheus",
+  "name": "AWS Managed Prometheus",
+  "url": "https://aws.amazon.com/prometheus/",
+  "description": "Runs in your AWS account with managed operations.",
+  "pricing": "Pay-as-you-go",
+  "products": ["prometheus"]
+}

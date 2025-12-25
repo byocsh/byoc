@@ -18,28 +18,34 @@ export default function SubmitVendorPage() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const generateVendorEntry = () => {
+  const generateVendorJSON = () => {
     // Generate a slug from vendor name
     const slug = formData.vendorName.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
     
-    // Create the vendor entry that would be added to tools.ts
-    const vendorEntry = `// Vendor: ${formData.vendorName}
-// Website: ${formData.vendorUrl}
-// Description: ${formData.vendorDescription}
-// Pricing: ${formData.pricing || 'Contact sales'}
-// Product/Tool: ${formData.productName}
-// BYOC Details: ${formData.byocDetails || 'N/A'}
-// Contact: ${formData.contactEmail || 'N/A'}
-//
-// Add this vendor to the appropriate tool in src/data/tools.ts:
-// { name: "${formData.vendorName}", url: "${formData.vendorUrl}", description: "${formData.vendorDescription}", pricing: "${formData.pricing || 'Contact sales'}" }
-`;
-    return { slug, content: vendorEntry };
+    // Generate product slug
+    const productSlug = formData.productName.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+    
+    // Create the vendor JSON
+    const vendorData = {
+      id: slug,
+      name: formData.vendorName,
+      url: formData.vendorUrl,
+      description: formData.vendorDescription,
+      pricing: formData.pricing || undefined,
+      products: [productSlug]
+    };
+    
+    // Remove undefined values
+    const cleanedData = Object.fromEntries(
+      Object.entries(vendorData).filter(([, v]) => v !== undefined)
+    );
+    
+    return { slug, content: JSON.stringify(cleanedData, null, 2) };
   };
 
   const generateGitHubPRUrl = () => {
-    const { slug, content } = generateVendorEntry();
-    const filename = `submissions/vendors/${slug}.md`;
+    const { slug, content } = generateVendorJSON();
+    const filename = `src/data/vendors/${slug}.json`;
     const encodedContent = encodeURIComponent(content);
     const message = encodeURIComponent(`Add vendor: ${formData.vendorName}`);
     

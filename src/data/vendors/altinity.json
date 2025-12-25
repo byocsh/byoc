@@ -1,0 +1,8 @@
+{
+  "id": "altinity",
+  "name": "Altinity",
+  "url": "https://altinity.com/",
+  "description": "Deploy and manage ClickHouse in your AWS, GCP, or Azure account.",
+  "pricing": "Contact sales",
+  "products": ["clickhouse"]
+}

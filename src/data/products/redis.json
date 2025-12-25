@@ -1,0 +1,12 @@
+{
+  "id": "redis",
+  "name": "Redis",
+  "description": "In-memory data structure store used as database, cache, and message broker.",
+  "category": "databases",
+  "github": "https://github.com/redis/redis",
+  "website": "https://redis.io/",
+  "stars": "67.0k",
+  "language": "C++",
+  "license": "BSD-3-Clause",
+  "vendors": ["redis-cloud", "scalegrid", "instaclustr"]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "zilliz-cloud",
+  "name": "Zilliz Cloud",
+  "url": "https://zilliz.com/bring-your-own-cloud",
+  "description": "Industry-first comprehensive BYOC for vector DB (upgraded Feb 2025, GCP GA June 2025). Data in your VPC with root access.",
+  "pricing": "Can use cloud credits",
+  "products": ["milvus"]
+}

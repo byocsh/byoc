@@ -1,0 +1,8 @@
+{
+  "id": "streamnative",
+  "name": "StreamNative",
+  "url": "https://streamnative.io/deployment/byoc",
+  "description": "BYOC² (Cloud + Compute) for Pulsar and Kafka on AWS, GCP, Azure. Also offers Managed Flink BYOC.",
+  "pricing": "Compute + Storage Units hourly",
+  "products": ["pulsar", "flink"]
+}

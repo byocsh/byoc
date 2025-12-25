@@ -1,0 +1,12 @@
+{
+  "id": "mysql",
+  "name": "MySQL",
+  "description": "The world's most popular open source database.",
+  "category": "databases",
+  "github": "https://github.com/mysql/mysql-server",
+  "website": "https://www.mysql.com/",
+  "stars": "11.0k",
+  "language": "C++",
+  "license": "GPL-2.0",
+  "vendors": ["scalegrid", "aiven", "instaclustr"]
+}

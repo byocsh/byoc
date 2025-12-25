@@ -1,0 +1,8 @@
+{
+  "id": "startree",
+  "name": "StarTree",
+  "url": "https://startree.ai/products/startree-cloud/",
+  "description": "BYOC on AWS, GCP - data plane in your VPC. 2025 added BYOK (Bring Your Own Kubernetes) for deeper control.",
+  "pricing": "Custom SLAs",
+  "products": ["pinot"]
+}

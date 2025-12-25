@@ -1,0 +1,8 @@
+{
+  "id": "redis-cloud",
+  "name": "Redis Cloud",
+  "url": "https://redis.io/docs/latest/operate/rc/subscriptions/bring-your-own-cloud/",
+  "description": "BYOC on AWS with Active-Active geo-replication in your VPC.",
+  "pricing": "License + management fee",
+  "products": ["redis"]
+}
