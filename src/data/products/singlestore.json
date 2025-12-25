@@ -1,0 +1,12 @@
+{
+  "id": "singlestore",
+  "name": "SingleStore",
+  "description": "Real-time distributed SQL database for data-intensive applications.",
+  "category": "databases",
+  "github": "https://github.com/singlestore-labs",
+  "website": "https://www.singlestore.com/",
+  "stars": "0.5k",
+  "language": "C++",
+  "license": "Apache-2.0",
+  "vendors": ["singlestore-helios"]
+}

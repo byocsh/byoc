@@ -1,0 +1,12 @@
+{
+  "id": "coolify",
+  "name": "Coolify",
+  "description": "Open-source & self-hostable Heroku / Netlify / Vercel alternative.",
+  "category": "devops",
+  "github": "https://github.com/coollabsio/coolify",
+  "website": "https://coolify.io/",
+  "stars": "35.2k",
+  "language": "PHP",
+  "license": "Apache-2.0",
+  "vendors": ["coolify-cloud"]
+}

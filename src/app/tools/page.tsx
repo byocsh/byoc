@@ -3,7 +3,7 @@
 import { useState, useMemo } from "react";
 import Link from "next/link";
 import { GitHubIcon, ExternalLinkIcon } from "@/components/icons";
-import { tools, categories, languages, licenses, starFilters, getToolLogo, getVendorLogo } from "@/data/tools";
+import { tools, categories, languages, licenses, starFilters, getToolLogo, getVendorLogo } from "@/data";
 
 export default function ToolsPage() {
   const [selectedCategory, setSelectedCategory] = useState("all");

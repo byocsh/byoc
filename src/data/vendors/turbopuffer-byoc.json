@@ -1,0 +1,8 @@
+{
+  "id": "turbopuffer-byoc",
+  "name": "Turbopuffer",
+  "url": "https://turbopuffer.com/docs/byoc",
+  "description": "BYOC on AWS, GCP, Azure via Kubernetes - deployed within hours with Terraform configs. Data encrypted at rest in your cloud storage.",
+  "pricing": "Enterprise plan",
+  "products": ["turbopuffer"]
+}

@@ -1,0 +1,12 @@
+{
+  "id": "redpanda",
+  "name": "Redpanda",
+  "description": "Kafka-compatible streaming platform written in C++ with no ZooKeeper.",
+  "category": "streaming",
+  "github": "https://github.com/redpanda-data/redpanda",
+  "website": "https://redpanda.com/",
+  "stars": "9.6k",
+  "language": "C++",
+  "license": "BSL",
+  "vendors": ["redpanda-cloud"]
+}

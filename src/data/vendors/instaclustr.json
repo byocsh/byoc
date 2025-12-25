@@ -1,0 +1,8 @@
+{
+  "id": "instaclustr",
+  "name": "Instaclustr",
+  "url": "https://www.instaclustr.com/",
+  "description": "Managed open source data infrastructure in your cloud account.",
+  "pricing": "Via AWS/Azure Marketplace",
+  "products": ["cassandra", "mysql", "redis", "kafka", "opensearch"]
+}

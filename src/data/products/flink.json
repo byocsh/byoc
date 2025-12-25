@@ -1,0 +1,12 @@
+{
+  "id": "flink",
+  "name": "Apache Flink",
+  "description": "Stateful computations over data streams for real-time analytics.",
+  "category": "streaming",
+  "github": "https://github.com/apache/flink",
+  "website": "https://flink.apache.org/",
+  "stars": "24.2k",
+  "language": "Java",
+  "license": "Apache-2.0",
+  "vendors": ["ververica", "streamnative"]
+}

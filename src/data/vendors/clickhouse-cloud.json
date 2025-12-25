@@ -1,0 +1,8 @@
+{
+  "id": "clickhouse-cloud",
+  "name": "ClickHouse Cloud",
+  "url": "https://clickhouse.com/cloud",
+  "description": "True BYOC on AWS - all data in your VPC, ClickHouse manages operations.",
+  "pricing": "Pay-as-you-go",
+  "products": ["clickhouse"]
+}

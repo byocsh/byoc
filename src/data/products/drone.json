@@ -1,0 +1,12 @@
+{
+  "id": "drone",
+  "name": "Drone",
+  "description": "Container-native continuous delivery platform built on Docker.",
+  "category": "devops",
+  "github": "https://github.com/harness/drone",
+  "website": "https://www.drone.io/",
+  "stars": "32.1k",
+  "language": "Go",
+  "license": "Apache-2.0",
+  "vendors": ["harness"]
+}

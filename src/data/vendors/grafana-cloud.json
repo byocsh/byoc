@@ -1,0 +1,8 @@
+{
+  "id": "grafana-cloud",
+  "name": "Grafana Cloud",
+  "url": "https://grafana.com/products/cloud/",
+  "description": "Enterprise BYOC - full Grafana Cloud region in your AWS/GCP account.",
+  "pricing": "Enterprise",
+  "products": ["prometheus", "grafana"]
+}

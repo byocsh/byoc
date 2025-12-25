@@ -1,0 +1,12 @@
+{
+  "id": "uptime-kuma",
+  "name": "Uptime Kuma",
+  "description": "Fancy self-hosted monitoring tool like Uptime Robot.",
+  "category": "observability",
+  "github": "https://github.com/louislam/uptime-kuma",
+  "website": "https://uptime.kuma.pet/",
+  "stars": "60.5k",
+  "language": "TypeScript",
+  "license": "MIT",
+  "vendors": ["railway", "elestio"]
+}

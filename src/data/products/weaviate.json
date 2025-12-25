@@ -1,0 +1,12 @@
+{
+  "id": "weaviate",
+  "name": "Weaviate",
+  "description": "Open-source vector database with hybrid search capabilities.",
+  "category": "vector-db",
+  "github": "https://github.com/weaviate/weaviate",
+  "website": "https://weaviate.io/",
+  "stars": "11.8k",
+  "language": "Go",
+  "license": "BSD-3-Clause",
+  "vendors": ["weaviate-cloud"]
+}

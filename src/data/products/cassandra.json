@@ -1,0 +1,12 @@
+{
+  "id": "cassandra",
+  "name": "Apache Cassandra",
+  "description": "Distributed NoSQL database designed for scalability and high availability.",
+  "category": "databases",
+  "github": "https://github.com/apache/cassandra",
+  "website": "https://cassandra.apache.org/",
+  "stars": "9.0k",
+  "language": "Java",
+  "license": "Apache-2.0",
+  "vendors": ["instaclustr", "scalegrid"]
+}

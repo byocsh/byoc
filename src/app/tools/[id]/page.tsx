@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useParams } from "next/navigation";
-import { getToolById, getToolLogo, getVendorLogo } from "@/data/tools";
+import { getToolById, getToolLogo, getVendorLogo } from "@/data";
 import { GitHubIcon, ExternalLinkIcon } from "@/components/icons";
 import { CVEList } from "@/components/cve-list";
 

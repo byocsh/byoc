@@ -1,0 +1,12 @@
+{
+  "id": "postgresql",
+  "name": "PostgreSQL",
+  "description": "The world's most advanced open source relational database.",
+  "category": "databases",
+  "github": "https://github.com/postgres/postgres",
+  "website": "https://www.postgresql.org/",
+  "stars": "15.2k",
+  "language": "C++",
+  "license": "PostgreSQL",
+  "vendors": ["aws-rds"]
+}

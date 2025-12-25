@@ -1,0 +1,12 @@
+{
+  "id": "grafana",
+  "name": "Grafana",
+  "description": "Open source analytics and interactive visualization platform.",
+  "category": "observability",
+  "github": "https://github.com/grafana/grafana",
+  "website": "https://grafana.com/",
+  "stars": "65.2k",
+  "language": "TypeScript",
+  "license": "AGPL-3.0",
+  "vendors": ["grafana-cloud"]
+}

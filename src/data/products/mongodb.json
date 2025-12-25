@@ -1,0 +1,12 @@
+{
+  "id": "mongodb",
+  "name": "MongoDB",
+  "description": "The most popular NoSQL database for modern applications.",
+  "category": "databases",
+  "github": "https://github.com/mongodb/mongo",
+  "website": "https://www.mongodb.com/",
+  "stars": "26.5k",
+  "language": "C++",
+  "license": "SSPL",
+  "vendors": ["scalegrid"]
+}

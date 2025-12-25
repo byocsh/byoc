@@ -1,0 +1,8 @@
+{
+  "id": "snowflake-openflow",
+  "name": "Snowflake Openflow",
+  "url": "https://docs.snowflake.com/en/user-guide/data-integration/openflow/setup-openflow-byoc",
+  "description": "BYOC launched June 2025 - NiFi runtimes in your AWS VPC for data integration without data leaving your network.",
+  "pricing": "Contact Snowflake",
+  "products": ["nifi"]
+}

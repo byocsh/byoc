@@ -1,0 +1,12 @@
+{
+  "id": "pinot",
+  "name": "Apache Pinot",
+  "description": "Real-time distributed OLAP datastore for user-facing analytics.",
+  "category": "analytics",
+  "github": "https://github.com/apache/pinot",
+  "website": "https://pinot.apache.org/",
+  "stars": "5.5k",
+  "language": "Java",
+  "license": "Apache-2.0",
+  "vendors": ["startree"]
+}

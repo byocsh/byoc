@@ -1,0 +1,8 @@
+{
+  "id": "scalegrid",
+  "name": "ScaleGrid",
+  "url": "https://scalegrid.io/",
+  "description": "Fully managed databases in your cloud account with full admin and SSH access.",
+  "pricing": "From $6/mo + infrastructure",
+  "products": ["cassandra", "mysql", "mongodb", "redis"]
+}

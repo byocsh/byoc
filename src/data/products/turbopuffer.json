@@ -1,0 +1,12 @@
+{
+  "id": "turbopuffer",
+  "name": "Turbopuffer",
+  "description": "Fast vector database for real-time semantic search.",
+  "category": "vector-db",
+  "github": "https://github.com/turbopuffer",
+  "website": "https://turbopuffer.com/",
+  "stars": "0.1k",
+  "language": "Go",
+  "license": "Apache-2.0",
+  "vendors": ["turbopuffer-byoc"]
+}

@@ -1,0 +1,12 @@
+{
+  "id": "milvus",
+  "name": "Milvus",
+  "description": "Open-source vector database for AI applications and similarity search.",
+  "category": "vector-db",
+  "github": "https://github.com/milvus-io/milvus",
+  "website": "https://milvus.io/",
+  "stars": "31.0k",
+  "language": "Go",
+  "license": "Apache-2.0",
+  "vendors": ["zilliz-cloud"]
+}

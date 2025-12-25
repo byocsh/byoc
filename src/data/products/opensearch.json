@@ -1,0 +1,12 @@
+{
+  "id": "opensearch",
+  "name": "OpenSearch",
+  "description": "Open-source search and analytics suite derived from Elasticsearch.",
+  "category": "observability",
+  "github": "https://github.com/opensearch-project/OpenSearch",
+  "website": "https://opensearch.org/",
+  "stars": "9.8k",
+  "language": "Java",
+  "license": "Apache-2.0",
+  "vendors": ["aiven", "instaclustr"]
+}

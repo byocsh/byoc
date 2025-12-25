@@ -1,0 +1,8 @@
+{
+  "id": "aiven",
+  "name": "Aiven",
+  "url": "https://aiven.io/",
+  "description": "Managed open source data infrastructure with BYOC across AWS, GCP, Azure.",
+  "pricing": "Contact sales",
+  "products": ["mysql", "kafka", "opensearch"]
+}

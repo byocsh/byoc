@@ -1,0 +1,12 @@
+{
+  "id": "clickhouse",
+  "name": "ClickHouse",
+  "description": "Fast open-source column-oriented database for real-time analytics.",
+  "category": "analytics",
+  "github": "https://github.com/ClickHouse/ClickHouse",
+  "website": "https://clickhouse.com/",
+  "stars": "37.8k",
+  "language": "C++",
+  "license": "Apache-2.0",
+  "vendors": ["clickhouse-cloud", "altinity", "doublecloud"]
+}

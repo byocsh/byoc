@@ -1,0 +1,8 @@
+{
+  "id": "cockroachdb-cloud",
+  "name": "CockroachDB Cloud",
+  "url": "https://www.cockroachlabs.com/product/cloud/bring-your-own-cloud/",
+  "description": "BYOC on AWS, GCP, Azure - you control infrastructure while CockroachDB manages operations.",
+  "pricing": "Usage-based",
+  "products": ["cockroachdb"]
+}

@@ -1,0 +1,12 @@
+{
+  "id": "druid",
+  "name": "Apache Druid",
+  "description": "Real-time analytics database for fast slice-and-dice analytics.",
+  "category": "analytics",
+  "github": "https://github.com/apache/druid",
+  "website": "https://druid.apache.org/",
+  "stars": "13.5k",
+  "language": "Java",
+  "license": "Apache-2.0",
+  "vendors": ["imply"]
+}

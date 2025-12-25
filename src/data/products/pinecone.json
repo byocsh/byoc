@@ -1,0 +1,12 @@
+{
+  "id": "pinecone",
+  "name": "Pinecone",
+  "description": "Vector database purpose-built for machine learning applications.",
+  "category": "vector-db",
+  "github": "https://github.com/pinecone-io",
+  "website": "https://www.pinecone.io/",
+  "stars": "0.2k",
+  "language": "Python",
+  "license": "Apache-2.0",
+  "vendors": ["pinecone-byoc"]
+}
