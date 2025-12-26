@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { productsData } from "@/data";
 
 export default function SubmitVendorPage() {
   const [formData, setFormData] = useState({
@@ -142,16 +143,34 @@ export default function SubmitVendorPage() {
             <label htmlFor="productName" className="block text-sm font-medium mb-2">
               Product/Tool Supported *
             </label>
-            <input
-              type="text"
+            <select
               id="productName"
               name="productName"
               value={formData.productName}
               onChange={handleChange}
               required
-              placeholder="e.g., PostgreSQL, ClickHouse, Kafka"
               className="w-full px-4 py-3 border border-gray-200 dark:border-gray-800 bg-white dark:bg-black rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900 dark:focus:ring-white"
-            />
+            >
+              <option value="">Select a product</option>
+              {productsData
+                .sort((a, b) => a.name.localeCompare(b.name))
+                .map((product) => (
+                  <option key={product.id} value={product.name}>
+                    {product.name}
+                  </option>
+                ))}
+            </select>
+            <p className="text-xs text-gray-500 mt-2">
+              Don&apos;t see the product you support?{" "}
+              <a
+                href="/submit/product"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-900 dark:text-white underline hover:no-underline"
+              >
+                Add a new product
+              </a>
+            </p>
           </div>
 
           <div>

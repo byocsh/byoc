@@ -146,6 +146,10 @@ export default function SubmitProductPage() {
         </p>
 
         <form onSubmit={handleSubmit} className="space-y-6">
+          <h2 className="text-lg font-semibold pt-2 pb-1 border-b border-gray-200 dark:border-gray-800">
+            Product Details
+          </h2>
+
           <div>
             <label htmlFor="githubUrl" className="block text-sm font-medium mb-2">
               GitHub Repository URL <span className="text-gray-400 font-normal">(optional)</span>
