@@ -1,0 +1,12 @@
+{
+  "id": "parseable",
+  "name": "Parseable",
+  "description": "Open-source observability datalake for logs, metrics, events and traces. Built for high-performance telemetry ingestion and analysis.",
+  "category": "observability",
+  "github": "https://github.com/parseablehq/parseable",
+  "website": "https://parseable.com/",
+  "stars": "2.3k",
+  "language": "Rust",
+  "license": "AGPL-3.0",
+  "vendors": ["parseable-inc"]
+}

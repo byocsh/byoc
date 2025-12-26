@@ -18,6 +18,7 @@ import mongodb from './products/mongodb.json';
 import mysql from './products/mysql.json';
 import nifi from './products/nifi.json';
 import opensearch from './products/opensearch.json';
+import parseable from './products/parseable.json';
 import pinecone from './products/pinecone.json';
 import pinot from './products/pinot.json';
 import pocketbase from './products/pocketbase.json';
@@ -131,6 +132,7 @@ export const productsData: ProductData[] = [
   mysql,
   nifi,
   opensearch,
+  parseable,
   pinecone,
   pinot,
   pocketbase,
