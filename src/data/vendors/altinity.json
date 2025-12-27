@@ -1,7 +1,7 @@
 {
   "id": "altinity",
   "name": "Altinity",
-  "url": "https://altinity.com/",
+  "url": "https://docs.altinity.com/altinitycloud/quickstartguide/running-in-your-cloud-byoc/",
   "description": "Deploy and manage ClickHouse in your AWS, GCP, or Azure account.",
   "pricing": "Contact sales",
   "products": ["clickhouse"]
