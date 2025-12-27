@@ -1,7 +1,7 @@
 {
   "id": "railway",
   "name": "Railway",
-  "url": "https://railway.app/",
+  "url": "https://railway.com/",
   "description": "BYOC available in Enterprise tier - deploy in your cloud.",
   "pricing": "Enterprise",
   "products": ["pocketbase", "uptime-kuma"]

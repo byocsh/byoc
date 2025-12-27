@@ -1,7 +1,7 @@
 {
   "id": "harness",
   "name": "Harness",
-  "url": "https://harness.io/",
+  "url": "https://www.harness.io/products/continuous-delivery",
   "description": "BYOC deployment option - Harness manages CI/CD in your cloud.",
   "pricing": "Contact sales",
   "products": ["drone"]
