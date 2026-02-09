@@ -1,0 +1,72 @@
+---
+title: "What is BYOC? Understanding the Bring Your Own Cloud Movement"
+description: "BYOC (Bring Your Own Cloud) is reshaping how companies deploy software. Learn what BYOC means, why it matters, and how open source tools are enabling this shift."
+date: "2025-06-15"
+author: "byoc.sh"
+category: "industry-insights"
+tags: ["byoc", "cloud", "self-hosting", "open-source"]
+published: true
+---
+
+# What is BYOC?
+
+**Bring Your Own Cloud (BYOC)** is a deployment model where software runs inside *your* cloud account — not the vendor's. You get the convenience of a managed service while retaining full control over your data, network, and infrastructure.
+
+## Why BYOC matters
+
+Traditional SaaS means your data lives on someone else's servers. For many teams — especially those dealing with compliance, latency, or cost constraints — that's a problem.
+
+BYOC flips the model:
+
+- **Data stays in your account.** No cross-account data transfers. Your logs, metrics, and customer data never leave your VPC.
+- **You control the network.** Private subnets, VPC peering, security groups — all yours.
+- **Costs are transparent.** You see the actual cloud spend on your bill instead of opaque per-seat pricing.
+- **Compliance is simpler.** SOC 2, HIPAA, GDPR — much easier when data doesn't leave your infrastructure.
+
+## How BYOC works in practice
+
+A typical BYOC deployment looks like this:
+
+1. You grant the vendor limited access to your cloud account (usually via an IAM role)
+2. The vendor deploys and manages the software within your infrastructure
+3. All data processing happens inside your account
+4. The vendor handles upgrades, monitoring, and maintenance remotely
+
+The key difference from self-hosting is that **the vendor still manages the software** — you're not on your own for operations.
+
+## BYOC vs. SaaS vs. Self-Hosted
+
+| | SaaS | BYOC | Self-Hosted |
+|---|---|---|---|
+| Data location | Vendor's cloud | Your cloud | Your cloud |
+| Operations | Vendor | Vendor | You |
+| Network control | Limited | Full | Full |
+| Setup effort | None | Low | High |
+| Cost visibility | Opaque | Transparent | Transparent |
+
+BYOC sits in a sweet spot: you get operational convenience *and* infrastructure control.
+
+## The open source advantage
+
+Many BYOC tools are open source, which means you can:
+
+- **Inspect the code** that runs in your environment
+- **Self-host first**, then move to managed BYOC when you need it
+- **Avoid lock-in** — if the vendor disappears, you still have the software
+
+Check out our [products directory](/tools) to explore open source tools that offer BYOC deployment options.
+
+## When should you choose BYOC?
+
+BYOC makes sense when:
+
+- Your compliance requirements restrict where data can live
+- You need to keep traffic within your VPC for latency or security reasons
+- You want managed operations but can't send data to a third party
+- You're spending more on SaaS than the underlying cloud resources would cost
+
+## Getting started
+
+The BYOC ecosystem is growing fast. More vendors are recognizing that customers want control without complexity.
+
+Browse the [byoc.sh directory](/tools) to find tools across categories like databases, observability, security, and more — all with BYOC deployment options from managed providers.

@@ -98,6 +98,16 @@ export default function RootLayout({
                   products
                 </Link>
                 <Link
+                  href="/blog"
+                  className={`text-sm transition-colors ${
+                    pathname === "/blog" || pathname.startsWith("/blog/")
+                      ? "text-gray-900 dark:text-white font-medium"
+                      : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
+                  }`}
+                >
+                  blog
+                </Link>
+                <Link
                   href="/about"
                   className={`text-sm transition-colors ${
                     pathname === "/about"

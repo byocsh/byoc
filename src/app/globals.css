@@ -25,3 +25,11 @@ a {
 a:hover {
   opacity: 0.8;
 }
+
+.prose-byoc {
+  line-height: 1.75;
+}
+
+.prose-byoc > *:first-child {
+  margin-top: 0;
+}
