@@ -1,5 +1,7 @@
-import type { MDXComponents } from "mdx/types";
+import type { ComponentPropsWithoutRef } from "react";
 import Link from "next/link";
+
+type MDXComponents = Record<string, React.ComponentType<ComponentPropsWithoutRef<any>>>;
 
 export const mdxComponents: MDXComponents = {
   h1: (props) => (
